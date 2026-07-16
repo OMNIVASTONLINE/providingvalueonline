@@ -5,8 +5,12 @@ import {
   fetchSanityPosts,
   fetchSanityFeaturedPosts,
   fetchSanityCategories,
+  fetchSanityPostBySlug,
+  fetchAllSanitySlugs,
   type SanityPost,
+  type SanityPostDetail,
 } from "@/sanity/lib/queries";
+import { urlFor } from "@/sanity/lib/image";
 
 const VALID_CATEGORIES: Category[] = [
   "Side Hustles",
@@ -92,4 +96,71 @@ export async function getAllCategories(): Promise<Category[]> {
     // Fall through
   }
   return Object.keys(CATEGORY_STYLES) as Category[];
+}
+
+// ---------------------------------------------------------------------------
+// Single-post fetcher — tries Sanity first, falls back to local data
+// ---------------------------------------------------------------------------
+
+export interface SanityPostWithBody {
+  source: "sanity";
+  slug: string;
+  title: string;
+  category: Category;
+  excerpt: string;
+  readTimeMinutes: number;
+  publishedAt: string;
+  featured: boolean;
+  author: {
+    name: string;
+    role: string;
+    imageRef?: string;
+  };
+  body: unknown[];
+  mainImage?: {
+    url: string;
+    alt: string;
+  };
+}
+
+export type ResolvedPost = SanityPostWithBody | Post;
+
+function mapSanityDetailToResolvedPost(d: SanityPostDetail): SanityPostWithBody {
+  return {
+    source: "sanity",
+    slug: d.slug,
+    title: d.title,
+    category: mapToCategory(d.category),
+    excerpt: d.excerpt || "",
+    readTimeMinutes: d.readTimeMinutes || 5,
+    publishedAt: d.publishedAt,
+    featured: d.featured || false,
+    author: {
+      name: d.author?.name || "Unknown",
+      role: "Writer",
+      imageRef: d.author?.image?.asset?._ref,
+    },
+    body: d.body ?? [],
+    mainImage: d.mainImage?.asset?._ref
+      ? { url: urlFor(d.mainImage).width(1200).url(), alt: d.mainImage.alt || d.title }
+      : undefined,
+  };
+}
+
+export async function getPostBySlugFromSanity(slug: string): Promise<SanityPostWithBody | null> {
+  try {
+    const post = await fetchSanityPostBySlug(slug);
+    if (!post) return null;
+    return mapSanityDetailToResolvedPost(post);
+  } catch {
+    return null;
+  }
+}
+
+export async function getAllSlugsFromSanity(): Promise<string[]> {
+  try {
+    return await fetchAllSanitySlugs();
+  } catch {
+    return [];
+  }
 }

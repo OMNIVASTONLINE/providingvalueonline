@@ -15,6 +15,19 @@ export interface SanityPost {
   readTimeMinutes?: number;
 }
 
+export interface SanityPostDetail extends SanityPost {
+  mainImage?: {
+    asset?: { _ref?: string; url?: string };
+    alt?: string;
+  } | null;
+  body?: unknown[] | null;
+  author: {
+    name: string;
+    image?: { asset?: { _ref?: string } } | null;
+    bio?: unknown[] | null;
+  } | null;
+}
+
 export interface SanityCategory {
   _id: string;
   title: string;
@@ -49,6 +62,35 @@ const FEATURED_POSTS_QUERY = `
   }
 `;
 
+const SINGLE_POST_QUERY = `
+  *[_type == "post" && !(_id in path("drafts.**")) && slug.current == $slug][0] {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    excerpt,
+    featured,
+    "category": categories[0]->title,
+    "categories": categories[]->title,
+    "author": author->{
+      name,
+      image,
+      bio
+    },
+    "mainImage": mainImage{
+      ...,
+      alt
+    },
+    body
+  }
+`;
+
+const ALL_SLUGS_QUERY = `
+  *[_type == "post" && !(_id in path("drafts.**"))] {
+    "slug": slug.current
+  }
+`;
+
 const CATEGORIES_QUERY = `
   *[_type == "category"] | order(title asc) {
     _id,
@@ -67,4 +109,12 @@ export async function fetchSanityFeaturedPosts(): Promise<SanityPost[]> {
 
 export async function fetchSanityCategories(): Promise<SanityCategory[]> {
   return client.fetch(CATEGORIES_QUERY);
+}
+
+export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostDetail | null> {
+  return client.fetch(SINGLE_POST_QUERY, { slug });
+}
+
+export async function fetchAllSanitySlugs(): Promise<string[]> {
+  return client.fetch<{ slug: string }[]>(ALL_SLUGS_QUERY).then((posts) => posts.map((p) => p.slug));
 }
