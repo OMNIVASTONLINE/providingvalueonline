@@ -1,0 +1,68 @@
+import { posts } from "./posts-data";
+import type { Category, Post } from "./types";
+
+// Small, dependency-free "data layer" over the static mock array.
+// Swapping this for a CMS or database later only requires changing
+// this file — every page already consumes these functions.
+
+export function getAllPosts(): Post[] {
+  return [...posts].sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+}
+
+export function getFeaturedPosts(): Post[] {
+  return getAllPosts().filter((post) => post.featured);
+}
+
+export function getPostBySlug(slug: string): Post | undefined {
+  return posts.find((post) => post.slug === slug);
+}
+
+export function getAllSlugs(): string[] {
+  return posts.map((post) => post.slug);
+}
+
+export function getAllCategories(): Category[] {
+  return Object.keys(CATEGORY_STYLES) as Category[];
+}
+
+export function getPostsByCategory(category: Category): Post[] {
+  return getAllPosts().filter((post) => post.category === category);
+}
+
+export function getRelatedPosts(slug: string, limit = 3): Post[] {
+  const current = getPostBySlug(slug);
+  if (!current) return [];
+
+  return getAllPosts()
+    .filter((post) => post.slug !== slug)
+    .sort((a, b) => {
+      const aMatch = a.category === current.category ? 1 : 0;
+      const bMatch = b.category === current.category ? 1 : 0;
+      return bMatch - aMatch;
+    })
+    .slice(0, limit);
+}
+
+export function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+}
+
+export const CATEGORY_STYLES: Record<Category, { bg: string; text: string; dot: string }> = {
+  "Side Hustles": { bg: "bg-emerald-50", text: "text-emerald-700", dot: "bg-emerald-500" },
+  "Remote Gigs": { bg: "bg-navy-50", text: "text-navy-700", dot: "bg-navy-500" },
+  Freelancing: { bg: "bg-amber-50", text: "text-amber-700", dot: "bg-amber-500" },
+  "Career Growth": { bg: "bg-violet-50", text: "text-violet-700", dot: "bg-violet-500" },
+  "Passive Income": { bg: "bg-teal-50", text: "text-teal-700", dot: "bg-teal-500" },
+  "Skill Building": { bg: "bg-rose-50", text: "text-rose-700", dot: "bg-rose-500" },
+  "Jobs": { bg: "bg-sky-50", text: "text-sky-700", dot: "bg-sky-500" },
+};
+
+export const SITE_URL = "https://www.providingvalue.online";
+export const SITE_NAME = "Providing Value";
+export const SITE_TAGLINE = "Your Gateway to Global Job Opportunity and Career Growth.";

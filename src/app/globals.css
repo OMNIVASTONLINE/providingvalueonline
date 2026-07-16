@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@config "../../tailwind.config.mts";
+
+:root {
+  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter);
+}
+
+/* Readable article typography for blog posts */
+.prose-article {
+  color: #1e293b;
+  line-height: 1.85;
+}
+
+.prose-article h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0b1729;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.prose-article h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #122641;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-article p {
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  font-size: 1.0625rem;
+}
+
+.prose-article ul,
+.prose-article ol {
+  margin-top: 1.1rem;
+  margin-bottom: 1.1rem;
+  padding-left: 1.5rem;
+}
+
+.prose-article li {
+  margin-top: 0.4rem;
+  font-size: 1.0625rem;
+}
+
+.prose-article ul li {
+  list-style-type: disc;
+}
+
+.prose-article ol li {
+  list-style-type: decimal;
+}
+
+.prose-article a {
+  color: #047857;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-article blockquote {
+  border-left: 4px solid #10b981;
+  background: #ecfdf5;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  font-style: italic;
+  color: #065f46;
+  margin: 1.5rem 0;
+}
+
+.prose-article strong {
+  color: #0b1729;
+  font-weight: 700;
+}
+
+/* Utility for line clamping excerpts on cards */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

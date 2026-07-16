@@ -1,0 +1,496 @@
+
+> providingvalueonline@1.0.0 dev
+> next dev
+
+▲ Next.js 16.2.10 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.56.1:3000
+- Environments: .env.local
+✓ Ready in 1494ms
+⚠ Slow filesystem detected. The benchmark took 674ms. If C:\Users\DELL\Downloads\providingvalueonline\.next/dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+
+○ Compiling / ...
+ GET / 200 in 3.6s (next.js: 2.4s, application-code: 1254ms)
+ GET / 200 in 29.3s (next.js: 27.7s, application-code: 1554ms)
+ GET /images/icon.png 404 in 1772ms (next.js: 1630ms, application-code: 142ms)
+ GET /blog/remote-jobs-no-experience 200 in 2.0s (next.js: 1903ms, generate-params: 1020ms, application-code: 121ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET / 200 in 277ms (next.js: 11ms, application-code: 267ms)
+○ Compiling /_error ...
+⨯ A conflicting public file and page file was found for path /robots.txt https://nextjs.org/docs/messages/conflicting-public-file-page
+ GET /robots.txt 500 in 3.6s (next.js: 3.3s, application-code: 317ms)
+ GET /robots.txt 200 in 1313ms (next.js: 1209ms, application-code: 103ms)
+✓ Compiled in 289ms
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET /blog/remote-jobs-no-experience 200 in 2.4s (next.js: 892ms, generate-params: 152ms, application-code: 1545ms)
+ GET / 200 in 2.5s (next.js: 266ms, application-code: 2.2s)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET /blog/remote-jobs-no-experience 200 in 1097ms (next.js: 25ms, generate-params: 174µs, application-code: 1072ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET / 200 in 1666ms (next.js: 62ms, application-code: 1604ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET / 200 in 1347ms (next.js: 199ms, application-code: 1148ms)
+ GET / 200 in 1354ms (next.js: 24ms, application-code: 1330ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET / 200 in 1638ms (next.js: 17ms, application-code: 1621ms)
+ GET / 200 in 1399ms (next.js: 14ms, application-code: 1385ms)
+ GET / 200 in 1225ms (next.js: 20ms, application-code: 1205ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET /blog/remote-jobs-no-experience 200 in 1259ms (next.js: 20ms, generate-params: 147µs, application-code: 1239ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Header (src\components\Header.tsx:24:14)
+  22 |         <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value h...
+  23 |           <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-navy-900...
+> 24 |             <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |              ^
+  25 |           </span>
+  26 |           <span className="flex flex-col leading-tight">
+  27 |             <span className="text-lg font-bold tracking-tight text-navy-950"> {
+  digest: '2112926022'
+}
+ GET /blog/remote-jobs-no-experience 200 in 1230ms (next.js: 16ms, generate-params: 63µs, application-code: 1214ms)
+ GET /blog/remote-jobs-no-experience 200 in 1232ms (next.js: 320ms, generate-params: 91µs, application-code: 912ms)
+ GET /blog/remote-jobs-no-experience 200 in 632ms (next.js: 136ms, generate-params: 120ms, application-code: 495ms)
+ GET /blog/remote-jobs-no-experience 200 in 270ms (next.js: 13ms, generate-params: 83µs, application-code: 258ms)
+✓ Finished filesystem cache database compaction in 11.1s
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+✓ Compiled in 1497ms
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+⚠ Fast Refresh had to perform a full reload due to a runtime error.
+ GET /blog/remote-jobs-no-experience 200 in 1352ms (next.js: 748ms, generate-params: 542ms, application-code: 604ms)
+ GET / 200 in 2.2s (next.js: 199ms, application-code: 2.0s)
+✓ Compiled in 166ms
+ GET /blog/remote-jobs-no-experience 200 in 2.3s (next.js: 988ms, generate-params: 637ms, application-code: 1332ms)
+ GET / 200 in 2.9s (next.js: 365ms, application-code: 2.6s)
+ GET / 200 in 2.3s (next.js: 1243ms, application-code: 1078ms)
+ GET /blog/remote-jobs-no-experience 200 in 857ms (next.js: 41ms, generate-params: 130µs, application-code: 816ms)
+ GET / 200 in 1345ms (next.js: 161ms, application-code: 1184ms)
+ GET / 200 in 1345ms (next.js: 16ms, application-code: 1329ms)
+ GET /blog/remote-jobs-no-experience 200 in 516ms (next.js: 234ms, generate-params: 68µs, application-code: 283ms)
+ GET /blog/remote-jobs-no-experience 200 in 524ms (next.js: 17ms, generate-params: 60µs, application-code: 507ms)
+ GET / 200 in 260ms (next.js: 5ms, application-code: 255ms)
+✓ Compiled in 3s
+✓ Compiled in 894ms
+ GET /blog/remote-jobs-no-experience 200 in 7.3s (next.js: 1527ms, generate-params: 630ms, application-code: 5.8s)
+ GET / 200 in 7.3s (next.js: 6.0s, application-code: 1357ms)
+ GET /blog/remote-jobs-no-experience 200 in 715ms (next.js: 95ms, generate-params: 82µs, application-code: 620ms)
+ GET / 200 in 1120ms (next.js: 46ms, application-code: 1074ms)
+ GET / 200 in 808ms (next.js: 18ms, application-code: 790ms)
+ GET / 200 in 621ms (next.js: 18ms, application-code: 603ms)
+ GET /blog/remote-jobs-no-experience 200 in 358ms (next.js: 13ms, generate-params: 66µs, application-code: 345ms)
+ GET /blog/remote-jobs-no-experience 200 in 141ms (next.js: 17ms, generate-params: 27µs, application-code: 124ms)
+✓ Compiled in 234ms
+ GET /blog/remote-jobs-no-experience 200 in 1957ms (next.js: 356ms, generate-params: 57µs, application-code: 1601ms)
+ GET /blog/remote-jobs-no-experience 200 in 623ms (next.js: 11ms, generate-params: 35µs, application-code: 612ms)
+ GET / 200 in 1147ms (next.js: 275ms, application-code: 872ms)
+ GET / 200 in 733ms (next.js: 106ms, application-code: 627ms)
+ GET /blog/remote-jobs-no-experience 200 in 520ms (next.js: 13ms, generate-params: 53µs, application-code: 507ms)
+ GET /blog/remote-jobs-no-experience 200 in 403ms (next.js: 21ms, generate-params: 84µs, application-code: 383ms)
+ GET / 200 in 274ms (next.js: 10ms, application-code: 263ms)
+ GET / 200 in 156ms (next.js: 15ms, application-code: 141ms)
+✓ Compiled in 294ms
+ GET /blog/remote-jobs-no-experience 200 in 3.4s (next.js: 713ms, generate-params: 133ms, application-code: 2.7s)
+ GET /blog/remote-jobs-no-experience 200 in 2.7s (next.js: 346ms, generate-params: 218µs, application-code: 2.4s)
+ GET / 200 in 3.1s (next.js: 1100ms, application-code: 2.0s)
+ GET /blog/remote-jobs-no-experience 200 in 1720ms (next.js: 382ms, generate-params: 273µs, application-code: 1338ms)
+ GET /blog/remote-jobs-no-experience 200 in 1719ms (next.js: 96ms, generate-params: 93µs, application-code: 1623ms)
+ GET / 200 in 1099ms (next.js: 29ms, application-code: 1070ms)
+ GET / 200 in 786ms (next.js: 24ms, application-code: 763ms)
+ GET / 200 in 446ms (next.js: 30ms, application-code: 415ms)
+ GET / 200 in 1323ms (next.js: 7ms, application-code: 1316ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET /blog/remote-jobs-no-experience 200 in 2.9s (next.js: 705ms, generate-params: 106ms, application-code: 2.2s)
+ GET / 200 in 1709ms (next.js: 305ms, application-code: 1405ms)
+ GET /blog/remote-jobs-no-experience 200 in 1127ms (next.js: 188ms, generate-params: 54µs, application-code: 939ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET / 200 in 1422ms (next.js: 14ms, application-code: 1408ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET / 200 in 1373ms (next.js: 16ms, application-code: 1356ms)
+ GET / 200 in 1373ms (next.js: 222ms, application-code: 1151ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET / 200 in 1553ms (next.js: 16ms, application-code: 1537ms)
+ GET / 200 in 1556ms (next.js: 123ms, application-code: 1434ms)
+ GET / 200 in 1566ms (next.js: 299ms, application-code: 1268ms)
+ GET / 200 in 959ms (next.js: 10ms, application-code: 949ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET /blog/remote-jobs-no-experience 200 in 1187ms (next.js: 130ms, generate-params: 114ms, application-code: 1056ms)
+ GET /blog/remote-jobs-no-experience 200 in 1188ms (next.js: 319ms, generate-params: 56µs, application-code: 868ms)
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+⨯ ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span> {
+  digest: '1042454137'
+}
+ GET /blog/remote-jobs-no-experience 200 in 1060ms (next.js: 22ms, generate-params: 132µs, application-code: 1038ms)
+ GET /blog/remote-jobs-no-experience 200 in 1060ms (next.js: 220ms, generate-params: 58µs, application-code: 839ms)
+ GET /blog/remote-jobs-no-experience 200 in 616ms (next.js: 27ms, generate-params: 68µs, application-code: 589ms)
+ GET /blog/remote-jobs-no-experience 200 in 371ms (next.js: 34ms, generate-params: 61µs, application-code: 337ms)
+[browser] Uncaught ReferenceError: Briefcase is not defined
+    at Footer (src\components\Footer.tsx:16:16)
+  14 |           <Link href="/" className="flex items-center gap-2.5">
+  15 |             <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-emeral...
+> 16 |               <Briefcase className="h-5 w-5" strokeWidth={2.25} aria-hidden="true" />
+     |                ^
+  17 |             </span>
+  18 |             <span className="text-lg font-bold tracking-tight text-white">
+  19 |               Providing<span className="text-royal-400">Value</span>
+✓ Compiled in 226ms
+ GET /blog/remote-jobs-no-experience 200 in 890ms (next.js: 309ms, generate-params: 87ms, application-code: 582ms)
+ GET / 200 in 867ms (next.js: 378ms, application-code: 489ms)
+ GET / 200 in 234ms (next.js: 6ms, application-code: 228ms)
+ GET / 200 in 82ms (next.js: 6ms, application-code: 76ms)
+[browser] Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
+ GET / 200 in 5.7s (next.js: 4.2s, application-code: 1522ms)
+ GET / 200 in 1117ms (next.js: 9ms, application-code: 1108ms)
+ GET / 200 in 1251ms (next.js: 16ms, application-code: 1235ms)
+ GET / 200 in 1252ms (next.js: 117ms, application-code: 1135ms)
+ GET / 200 in 1254ms (next.js: 199ms, application-code: 1055ms)
+ GET / 200 in 1255ms (next.js: 359ms, application-code: 896ms)
+ GET / 200 in 405ms (next.js: 13ms, application-code: 392ms)
+ GET / 200 in 197ms (next.js: 9ms, application-code: 188ms)
+✓ Compiled in 546ms
+ GET / 200 in 1320ms (next.js: 706ms, application-code: 613ms)
+ GET / 200 in 1303ms (next.js: 18ms, application-code: 1285ms)
+ GET / 200 in 1514ms (next.js: 292ms, application-code: 1222ms)
+ GET / 200 in 1517ms (next.js: 76ms, application-code: 1441ms)
+ GET / 200 in 1519ms (next.js: 413ms, application-code: 1107ms)
+ GET / 200 in 771ms (next.js: 31ms, application-code: 740ms)
+ GET / 200 in 535ms (next.js: 9ms, application-code: 526ms)
+ GET / 200 in 399ms (next.js: 92ms, application-code: 307ms)
+✓ Compiled in 392ms
+ GET / 200 in 2.2s (next.js: 6ms, application-code: 2.2s)
+○ Compiling /about ...
+✓ Finished writing to filesystem cache in 18.8s
+ GET / 200 in 1608ms (next.js: 339ms, application-code: 1269ms)
+ GET / 200 in 1131ms (next.js: 8ms, application-code: 1123ms)
+ GET / 200 in 1147ms (next.js: 21ms, application-code: 1126ms)
+ GET / 200 in 1156ms (next.js: 167ms, application-code: 989ms)
+ GET / 200 in 1160ms (next.js: 285ms, application-code: 875ms)
+ GET / 200 in 1155ms (next.js: 377ms, application-code: 779ms)
+ GET / 200 in 908ms (next.js: 19ms, application-code: 889ms)
+ GET / 200 in 679ms (next.js: 28ms, application-code: 651ms)
+ GET / 200 in 464ms (next.js: 130ms, application-code: 334ms)
+ GET / 200 in 471ms (next.js: 18ms, application-code: 453ms)
+✓ Finished filesystem cache database compaction in 92s
+ GET / 200 in 4.2s (next.js: 2.5s, application-code: 1696ms)
+ GET / 200 in 1200ms (next.js: 132ms, application-code: 1068ms)
+ GET / 200 in 1162ms (next.js: 17ms, application-code: 1145ms)
+ GET / 200 in 1171ms (next.js: 137ms, application-code: 1034ms)
+ GET / 200 in 1178ms (next.js: 241ms, application-code: 937ms)
+ GET / 200 in 1179ms (next.js: 325ms, application-code: 854ms)
+ GET / 200 in 959ms (next.js: 24ms, application-code: 935ms)
+ GET / 200 in 698ms (next.js: 33ms, application-code: 665ms)
+ GET / 200 in 527ms (next.js: 76ms, application-code: 451ms)
+ GET / 200 in 527ms (next.js: 180ms, application-code: 347ms)
+ GET / 200 in 27ms (next.js: 9ms, application-code: 18ms)
+ GET / 200 in 86ms (next.js: 5ms, application-code: 81ms)
+ GET / 200 in 1374ms (next.js: 7ms, application-code: 1368ms)
+✓ Compiled in 487ms
+ GET / 200 in 1370ms (next.js: 291ms, application-code: 1080ms)
+ GET / 200 in 708ms (next.js: 25ms, application-code: 683ms)
+ GET / 200 in 466ms (next.js: 24ms, application-code: 442ms)
+ GET / 200 in 467ms (next.js: 167ms, application-code: 300ms)
