@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Rocket } from "lucide-react";
 import PostCard from "@/components/PostCard";
-import { getAllCategories, getAllPosts, getFeaturedPosts, SITE_TAGLINE } from "@/lib/posts";
+import { SITE_TAGLINE } from "@/lib/posts";
+import { getAllCategories, getAllPosts, getFeaturedPosts } from "@/lib/sanity-helpers";
 import type { Category } from "@/lib/types";
 
 export const metadata: Metadata = {
@@ -18,9 +19,9 @@ export default async function HomePage({
   searchParams: Promise<{ category?: string }>;
 }) {
   const { category } = await searchParams;
-  const categories = getAllCategories();
-  const allPosts = getAllPosts();
-  const featuredPosts = getFeaturedPosts();
+  const categories = await getAllCategories();
+  const allPosts = await getAllPosts();
+  const featuredPosts = await getFeaturedPosts();
 
   const activeCategory: Category | undefined = categories.find((c) => c === category);
   const visiblePosts = activeCategory
