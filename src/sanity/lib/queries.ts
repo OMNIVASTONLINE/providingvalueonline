@@ -40,6 +40,9 @@ const POSTS_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
+    excerpt,
+    featured,
+    readTimeMinutes,
     "category": categories[0]->title,
     "categories": categories[]->title,
     "author": author->{
@@ -54,6 +57,9 @@ const FEATURED_POSTS_QUERY = `
     title,
     "slug": slug.current,
     publishedAt,
+    excerpt,
+    featured,
+    readTimeMinutes,
     "category": categories[0]->title,
     "categories": categories[]->title,
     "author": author->{
@@ -70,6 +76,7 @@ const SINGLE_POST_QUERY = `
     publishedAt,
     excerpt,
     featured,
+    readTimeMinutes,
     "category": categories[0]->title,
     "categories": categories[]->title,
     "author": author->{
@@ -99,6 +106,23 @@ const CATEGORIES_QUERY = `
   }
 `;
 
+const RELATED_POSTS_QUERY = `
+  *[_type == "post" && !(_id in path("drafts.**")) && count(categories[@->title == $category]) > 0 && slug.current != $slug] | order(publishedAt desc)[0...$limit] {
+    _id,
+    title,
+    "slug": slug.current,
+    publishedAt,
+    excerpt,
+    featured,
+    readTimeMinutes,
+    "category": categories[0]->title,
+    "categories": categories[]->title,
+    "author": author->{
+      name,
+    },
+  }
+`;
+
 export async function fetchSanityPosts(): Promise<SanityPost[]> {
   return client.fetch(POSTS_QUERY);
 }
@@ -117,4 +141,8 @@ export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostDet
 
 export async function fetchAllSanitySlugs(): Promise<string[]> {
   return client.fetch<{ slug: string }[]>(ALL_SLUGS_QUERY).then((posts) => posts.map((p) => p.slug));
+}
+
+export async function fetchRelatedPosts(slug: string, category: string, limit: number): Promise<SanityPost[]> {
+  return client.fetch(RELATED_POSTS_QUERY, { slug, category, limit });
 }

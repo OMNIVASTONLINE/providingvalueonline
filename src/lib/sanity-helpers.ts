@@ -1,12 +1,11 @@
 import type { Category, Post } from "./types";
-import { posts as localPosts } from "./posts-data";
-import { CATEGORY_STYLES } from "./posts";
 import {
   fetchSanityPosts,
   fetchSanityFeaturedPosts,
   fetchSanityCategories,
   fetchSanityPostBySlug,
   fetchAllSanitySlugs,
+  fetchRelatedPosts,
   type SanityPost,
   type SanityPostDetail,
 } from "@/sanity/lib/queries";
@@ -43,63 +42,32 @@ function mapSanityPostToPost(sanityPost: SanityPost): Post {
       role: "Writer",
     },
     featured: sanityPost.featured || false,
-    content: [],
   };
 }
 
-function sortLocalPosts(posts: Post[]): Post[] {
-  return [...posts].sort(
-    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
-}
-
 // ---------------------------------------------------------------------------
-// Async helpers — try Sanity first, fall back to posts-data.ts
+// Async helpers — Sanity is the single source of truth
 // ---------------------------------------------------------------------------
 
 export async function getAllPosts(): Promise<Post[]> {
-  try {
-    const sanityPosts = await fetchSanityPosts();
-    if (sanityPosts.length > 0) {
-      return sanityPosts.map(mapSanityPostToPost);
-    }
-  } catch {
-    // Sanity unavailable — fall through to local data
-  }
-  return sortLocalPosts(localPosts);
+  const sanityPosts = await fetchSanityPosts();
+  return sanityPosts.map(mapSanityPostToPost);
 }
 
 export async function getFeaturedPosts(): Promise<Post[]> {
-  try {
-    const sanityPosts = await fetchSanityFeaturedPosts();
-    if (sanityPosts.length > 0) {
-      return sanityPosts.map(mapSanityPostToPost);
-    }
-  } catch {
-    // Fall through
-  }
-  return sortLocalPosts(localPosts).filter((p) => p.featured);
+  const sanityPosts = await fetchSanityFeaturedPosts();
+  return sanityPosts.map(mapSanityPostToPost);
 }
 
 export async function getAllCategories(): Promise<Category[]> {
-  try {
-    const sanityCategories = await fetchSanityCategories();
-    if (sanityCategories.length > 0) {
-      const mapped = sanityCategories
-        .map((c) => mapToCategory(c.title))
-        .filter(
-          (c, i, arr) => arr.indexOf(c) === i, // deduplicate
-        );
-      return mapped;
-    }
-  } catch {
-    // Fall through
-  }
-  return Object.keys(CATEGORY_STYLES) as Category[];
+  const sanityCategories = await fetchSanityCategories();
+  return sanityCategories
+    .map((c) => mapToCategory(c.title))
+    .filter((c, i, arr) => arr.indexOf(c) === i);
 }
 
 // ---------------------------------------------------------------------------
-// Single-post fetcher — tries Sanity first, falls back to local data
+// Single-post fetcher
 // ---------------------------------------------------------------------------
 
 export interface SanityPostWithBody {
@@ -122,8 +90,6 @@ export interface SanityPostWithBody {
     alt: string;
   };
 }
-
-export type ResolvedPost = SanityPostWithBody | Post;
 
 function mapSanityDetailToResolvedPost(d: SanityPostDetail): SanityPostWithBody {
   return {
@@ -148,19 +114,16 @@ function mapSanityDetailToResolvedPost(d: SanityPostDetail): SanityPostWithBody 
 }
 
 export async function getPostBySlugFromSanity(slug: string): Promise<SanityPostWithBody | null> {
-  try {
-    const post = await fetchSanityPostBySlug(slug);
-    if (!post) return null;
-    return mapSanityDetailToResolvedPost(post);
-  } catch {
-    return null;
-  }
+  const post = await fetchSanityPostBySlug(slug);
+  if (!post) return null;
+  return mapSanityDetailToResolvedPost(post);
 }
 
 export async function getAllSlugsFromSanity(): Promise<string[]> {
-  try {
-    return await fetchAllSanitySlugs();
-  } catch {
-    return [];
-  }
+  return fetchAllSanitySlugs();
+}
+
+export async function getRelatedPosts(slug: string, category: string, limit = 3): Promise<Post[]> {
+  const posts = await fetchRelatedPosts(slug, category, limit);
+  return posts.map(mapSanityPostToPost);
 }

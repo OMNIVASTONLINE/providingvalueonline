@@ -75,6 +75,9 @@ export const metadata: Metadata = {
     icon: "/providingvaluelogo.png",
     apple: "/providingvaluelogo.png",
   },
+  verification: {
+    google: "mSA6F-taHiPHcZt-tfkKTQkgCYq80th_LlfA5GNZMwc",
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

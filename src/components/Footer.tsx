@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail } from "lucide-react";
-import { getAllCategories } from "@/lib/posts";
+import { getAllCategories } from "@/lib/sanity-helpers";
 
-export default function Footer() {
-  const categories = getAllCategories();
+export default async function Footer() {
+  const categories = await getAllCategories();
   const year = new Date().getFullYear();
 
   return (

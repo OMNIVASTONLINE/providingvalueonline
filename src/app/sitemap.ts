@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
-import { getAllSlugs, SITE_URL } from "@/lib/posts";
+import { SITE_URL } from "@/lib/posts";
+import { fetchAllSanitySlugs } from "@/sanity/lib/queries";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${SITE_URL}/`,
@@ -35,7 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const postRoutes: MetadataRoute.Sitemap = getAllSlugs().map((slug) => ({
+  const slugs = await fetchAllSanitySlugs();
+  const postRoutes: MetadataRoute.Sitemap = slugs.map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
     lastModified: new Date(),
     changeFrequency: "weekly",
