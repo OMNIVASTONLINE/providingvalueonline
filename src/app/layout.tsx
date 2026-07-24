@@ -85,7 +85,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-XQ97XV853R"
+        src="https://www.googletagmanager.com/gtag/js?id=G-M40BEXK2L7"
         strategy="afterInteractive"
       />
       <Script id="google-analytics" strategy="afterInteractive">
@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-XQ97XV853R');
+          gtag('config', 'G-M40BEXK2L7');
         `}
       </Script>
       <body suppressHydrationWarning className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased">
