@@ -96,6 +96,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           gtag('config', 'G-M40BEXK2L7');
         `}
       </Script>
+      <Script id="clarity" strategy="afterInteractive">
+        {`
+          (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "xrc5kl48a2");
+        `}
+      </Script>
       <body suppressHydrationWarning className="flex min-h-screen flex-col bg-slate-50 font-sans text-slate-900 antialiased">
         <JsonLd
           data={{
