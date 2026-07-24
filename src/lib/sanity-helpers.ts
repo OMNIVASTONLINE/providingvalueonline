@@ -120,7 +120,8 @@ export async function getPostBySlugFromSanity(slug: string): Promise<SanityPostW
 }
 
 export async function getAllSlugsFromSanity(): Promise<string[]> {
-  return fetchAllSanitySlugs();
+  const posts = await fetchAllSanitySlugs();
+  return posts.map((p) => p.slug);
 }
 
 export async function getRelatedPosts(slug: string, category: string, limit = 3): Promise<Post[]> {

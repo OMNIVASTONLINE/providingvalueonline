@@ -94,7 +94,8 @@ const SINGLE_POST_QUERY = `
 
 const ALL_SLUGS_QUERY = `
   *[_type == "post" && !(_id in path("drafts.**"))] {
-    "slug": slug.current
+    "slug": slug.current,
+    publishedAt
   }
 `;
 
@@ -139,8 +140,8 @@ export async function fetchSanityPostBySlug(slug: string): Promise<SanityPostDet
   return client.fetch(SINGLE_POST_QUERY, { slug });
 }
 
-export async function fetchAllSanitySlugs(): Promise<string[]> {
-  return client.fetch<{ slug: string }[]>(ALL_SLUGS_QUERY).then((posts) => posts.map((p) => p.slug));
+export async function fetchAllSanitySlugs(): Promise<{ slug: string; publishedAt: string }[]> {
+  return client.fetch<{ slug: string; publishedAt: string }[]>(ALL_SLUGS_QUERY);
 }
 
 export async function fetchRelatedPosts(slug: string, category: string, limit: number): Promise<SanityPost[]> {
