@@ -19,20 +19,20 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="Providing Value home">
+        <Link href="/" className="flex items-center gap-1.5 sm:gap-2.5" aria-label="Providing Value home">
           <Image
             src="/providingvaluelogo.png"
             alt="Providing Value logo"
             width={40}
             height={40}
-            className="h-9 w-9 rounded-lg object-contain"
+            className="h-8 w-8 shrink-0 rounded-lg object-contain sm:h-9 sm:w-9"
             priority
           />
-          <span className="hidden flex-col leading-tight sm:flex">
-            <span className="text-lg font-bold tracking-tight text-navy-950">
+          <span className="flex flex-col leading-tight">
+            <span className="text-sm font-bold tracking-tight text-navy-950 sm:text-lg">
               Providing <span className="text-royal-600">Value</span>
             </span>
-            <span className="text-[11px] font-medium text-slate-500">
+            <span className="hidden text-[11px] font-medium text-slate-500 sm:block">
               {SITE_TAGLINE}
             </span>
           </span>

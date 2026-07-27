@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Clock, User } from "lucide-react";
 import SanityTextBody from "@/components/SanityTextBody";
+import ShareButtons from "@/components/ShareButtons";
 import PostCard from "@/components/PostCard";
 import JsonLd from "@/components/JsonLd";
 import {
@@ -151,9 +152,25 @@ function renderPost(post: SanityPostWithBody) {
                 {post.readTimeMinutes} min read
               </span>
             </div>
+
+            <div className="mt-4">
+              <ShareButtons
+                title={post.title}
+                url={`${SITE_URL}/blog/${post.slug}`}
+                image={post.mainImage?.url}
+              />
+            </div>
           </header>
 
           <SanityTextBody value={post.body} />
+
+          <div className="mt-6">
+            <ShareButtons
+              title={post.title}
+              url={`${SITE_URL}/blog/${post.slug}`}
+              image={post.mainImage?.url}
+            />
+          </div>
 
           <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6">
             <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">
